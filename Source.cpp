@@ -64,9 +64,7 @@ public:
     }
 
     void fraction_obr() {
-        double x = chisl_;
-        chisl_ = znam_;
-        znam_ = x;
+        std::swap(chisl_, znam_);
         std::cout << "Обратная дробь: " <<  chisl_ << "/" << znam_ << std::endl;
         }
     
