@@ -113,10 +113,12 @@ public:
         return output;
     }
 
-    friend std::ostream& operator >> (std::ostream& output, const Fraction& f)
+    friend std::istream& operator >> (std::istream& input, Fraction& f)
     {
-        output << f.chisl_ << "/" << f.znam_ << std::endl;
-        return output;
+        input >> f.chisl_;
+        input.ignore(1);
+        input >> f.znam_;
+        return input;
     }
 
     bool is_greater () {
